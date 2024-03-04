@@ -1,27 +1,42 @@
-import { Button, Text, TextInput, View } from 'react-native'
+import { Image, StatusBar, Text, View } from 'react-native'
 import { styles } from './styles'
-import { useState } from 'react'
+import { ButtonIcon } from '../../components/ButtonIcon'
+
+import DiscordIcon from './../../assets/discord.png'
+import Illustration from './../../assets/illustration.png'
 
 export default function SignIn() {
-  const [text, setText] = useState('')
-  const [count, setCount] = useState(0)
-
   return (
     <View style={styles.container}>
-      <Text>Sign In</Text>
-
-      <TextInput
-        style={styles.input}
-        onChangeText={setText}
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="transparent"
+        translucent
       />
 
-      <Button  title='click' onPress={() => setCount((prevState) => prevState + 1)}/>
+      <Image
+        source={Illustration}
+        alt="Lee Sin, the character from the League of Legends game"
+        style={styles.image}
+        resizeMode="stretch"
+      />
 
-      <Text>{count}</Text>
+      <View style={styles.content}>
+        <Text style={styles.title}>
+          Easily{`\n`}organize your{`\n`}gaming
+        </Text>
 
-      <Text>
-        You typed: {text}
-      </Text>
+        <Text style={styles.subtitle}>
+          Create groups and play your favorite{`\n`}games with your friends.
+        </Text>
+
+        <ButtonIcon
+          icon={DiscordIcon}
+          iconAltText="Discord app"
+          text="Join with discord"
+          activeOpacity={0.75}
+        />
+      </View>
     </View>
   )
 }

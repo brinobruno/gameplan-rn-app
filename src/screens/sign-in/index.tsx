@@ -1,4 +1,4 @@
-import { Image, StatusBar, Text, View } from 'react-native'
+import { Image, Text, View } from 'react-native'
 import { styles } from './styles'
 import { ButtonIcon } from '../../components/ButtonIcon'
 
@@ -8,12 +8,6 @@ import Illustration from './../../assets/illustration.png'
 export default function SignIn() {
   return (
     <View style={styles.container}>
-      <StatusBar
-        barStyle="light-content"
-        backgroundColor="transparent"
-        translucent
-      />
-
       <Image
         source={Illustration}
         alt="Lee Sin, the character from the League of Legends game"
@@ -33,7 +27,7 @@ export default function SignIn() {
         <ButtonIcon
           icon={DiscordIcon}
           iconAltText="Discord app"
-          text="Join with discord"
+          text="Join with Discord"
           activeOpacity={0.75}
         />
       </View>
